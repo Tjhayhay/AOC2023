@@ -37,7 +37,7 @@ do
                         current_word=${line: $index:1}${current_word}
                     fi
                     # check if there are enough letters for a word
-                    # if [[ ${#line: $index} -ge 3 ]]; then
+                    if [[ ${#current_word} -ge 3 ]]; then
                         # echo "Current word: $current_word"
                         # check if current_word is a number
                         if [[ ${current_word} == *"one"* ]]; then
@@ -77,7 +77,7 @@ do
                             # echo "FOUND Number: $number"
                             i=${#line}
                         fi
-                    # fi
+                    fi
                 fi
             fi
         done
@@ -89,4 +89,4 @@ do
     # echo "Current result: $final_result "
 done < ./input.txt
 
-# echo "Final result: ${final_result}"
+echo "Final result: ${final_result}"
